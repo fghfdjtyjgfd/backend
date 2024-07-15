@@ -21,7 +21,7 @@ func NewRouter() {
 	}
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:3000",
+		AllowOrigins: fmt.Sprintf("%v", viper.GetString("cors.origin")),
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
